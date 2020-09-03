@@ -10,3 +10,6 @@ export { default as Footers } from "./Timetable/Footers/Footers";
 
 // Within Body component
 export { default as Column } from "./Timetable/Body/Column/Column";
+
+// Within EntryCard component
+export { default as CardDetails } from "./EntryCard/CardDetails/CardDetails";
