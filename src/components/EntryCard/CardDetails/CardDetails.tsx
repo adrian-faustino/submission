@@ -7,7 +7,7 @@ import { PROJECTS } from "../../../constants/appConfig";
 const initialState = {
   title: "",
   description: "",
-  project: "",
+  project: PROJECTS[0].title,
 };
 
 const CardDetails = () => {
