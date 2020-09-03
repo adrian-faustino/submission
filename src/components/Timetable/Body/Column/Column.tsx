@@ -78,6 +78,7 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
   return (
     <div className="Column__">
       {/* column header */}
+
       <h3 className="Column__header">{day.long}</h3>
 
       {/* render all entries */}

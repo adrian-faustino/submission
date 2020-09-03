@@ -61,3 +61,11 @@
     bottom: 0;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .Column__total-time-span {
+    height: auto;
+    width: auto;
+    border-radius: 0;
+  }
+}
