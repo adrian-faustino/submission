@@ -8,10 +8,9 @@ import { CardDetails, Timer } from "../";
 
 interface IEntryCardProps {
   day: IDay;
-  hour: IHour;
 }
 
-const EntryCard: React.FC<IEntryCardProps> = ({ day, hour }) => {
+const EntryCard: React.FC<IEntryCardProps> = ({ day }) => {
   /* State */
   const [isNewEntry, setIsNewEntry] = useState(false);
   const [timerReady, setTimerReady] = useState(false);
@@ -23,7 +22,6 @@ const EntryCard: React.FC<IEntryCardProps> = ({ day, hour }) => {
 
   return (
     <div className="EntryCard__ box-shadow border-rad">
-      <span>{hour}</span>
       <span>{day.short}</span>
       {!isNewEntry && <button onClick={handleAddEntry}>+</button>}
 

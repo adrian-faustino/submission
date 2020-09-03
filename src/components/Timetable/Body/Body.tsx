@@ -13,7 +13,12 @@ const Body = () => {
     ));
   };
 
-  return <section>{renderBodyJSX()}</section>;
+  return (
+    <section>
+      <div></div>
+      {renderBodyJSX()}
+    </section>
+  );
 };
 
 export default Body;
