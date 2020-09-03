@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+/* Styles */
+import "./Column.css";
 /* Constants */
 import { IDay } from "../../../../constants/types";
 /* Subcomponents */
@@ -9,9 +11,19 @@ interface IColumnProps {
 }
 
 const Column: React.FC<IColumnProps> = ({ day }) => {
+  const [entries, setEntries] = useState(null);
+
+  const handleAddNewEntry = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    console.log("Adding new entry...");
+  };
+
   return (
     <div>
-      <h3>{day.long}</h3>
+      {/* column header */}
+      <h3 className="Column__header">{day.long}</h3>
+
+      <button onClick={handleAddNewEntry}>+</button>
     </div>
   );
 };
