@@ -32,7 +32,6 @@
 }
 
 .CardDetails__project {
-  background: lightblue;
   font-size: var(--font-size-sm);
   width: max-content;
   margin: 0 auto;

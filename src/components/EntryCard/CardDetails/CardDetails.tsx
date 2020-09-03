@@ -48,6 +48,11 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
     setDetails((state) => ({ ...state, [name]: value }));
   };
 
+  // return project's tag color. changes can be made in appConfig.ts
+  const getProjectBGColor = (projTitle: string) => {
+    return PROJECTS.find((project) => project.title === projTitle)?.color_code;
+  };
+
   const buttonInnerText = isEditMode ? "save" : "edit";
 
   return (
@@ -89,7 +94,10 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
           <span className="CardDetails__description">
             {details.description || "No description provided."}
           </span>
-          <span className="CardDetails__project border-rad">
+          <span
+            style={{ background: getProjectBGColor(details.project) }}
+            className="CardDetails__project border-rad"
+          >
             {details.project}
           </span>
         </div>
