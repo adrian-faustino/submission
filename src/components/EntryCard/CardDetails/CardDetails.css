@@ -31,7 +31,25 @@
   right: 0;
 }
 
-.CardDetails__settings-btn.edit-mode {
+.CardDetails__settings-btn.edit {
   background: var(--theme-color-info);
-  color: rgba(28, 28, 28, 0.833);
+}
+
+.CardDetails__settings-btn.save {
+  background: var(--theme-color5);
+  color: white;
+  padding: 4px 10px;
+}
+
+/* make sure all stretch to fit card width */
+.CardDetails__form > * {
+  width: 100%;
+  margin-bottom: 6px;
+}
+
+.CardDetails__form > textarea,
+.CardDetails__form > input {
+  /* move placeholder text to right */
+  padding-left: 4px;
+  outline: none;
 }

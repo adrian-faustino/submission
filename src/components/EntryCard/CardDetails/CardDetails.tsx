@@ -51,25 +51,26 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
   };
 
   const buttonInnerText = isEditMode ? "save" : "edit";
-  const buttonCSSClass = !isEditMode && "edit-mode";
 
   return (
     <div>
       {/* only show form in edit mode */}
       {isEditMode && (
-        <form>
+        <form className="CardDetails__form">
           <input
             onChange={handleChange}
             value={details.title}
             type="text"
             name="title"
             placeholder="Enter title"
+            autoComplete="off"
           />
           <textarea
             onChange={handleChange}
             value={details.description}
             name="description"
             placeholder="Enter description"
+            autoComplete="off"
           ></textarea>
           <select
             onChange={handleChange}
@@ -95,7 +96,7 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
       )}
 
       <button
-        className={`CardDetails__settings-btn ${buttonCSSClass}`}
+        className={`CardDetails__settings-btn ${buttonInnerText}`}
         onClick={handleToggleEditMode}
       >
         {buttonInnerText}

@@ -33,9 +33,9 @@ code {
   --theme-color3: #364156;
   --theme-color4: #212d40;
   --theme-color5: #11151c;
-  --theme-color-info: rgb(9, 130, 171);
-  --theme-color-warning: red;
-  --theme-color-ok: rgb(13, 164, 13);
+  --theme-color-info: #008cba;
+  --theme-color-warning: #f44336;
+  --theme-color-ok: #4caf50;
 }
 
 /* element defaults  */
@@ -46,6 +46,11 @@ button {
   /* OVERRIDE: Reactstrap */
   outline: none !important;
   border-radius: 5px !important;
+}
+
+textarea {
+  resize: none !important;
+  min-height: 70px;
 }
 
 /* center inner text vertically and horizontally */
