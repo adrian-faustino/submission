@@ -1,13 +1,17 @@
-.TimerControls__.pause {
+.TimerControls__ {
+  margin: 10px 0 3px 0;
+}
+
+.TimerControls__btn.pause {
   background: var(--theme-color-warning);
 }
-.TimerControls__.pause:hover {
+.TimerControls__btn.pause:hover {
   background: var(--theme-color-warning2);
 }
 
-.TimerControls__.start {
+.TimerControls__btn.start {
   background: var(--theme-color-ok);
 }
-.TimerControls__.start:hover {
+.TimerControls__btn.start:hover {
   background: var(--theme-color-ok2);
 }

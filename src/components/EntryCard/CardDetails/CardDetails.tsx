@@ -44,8 +44,6 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
     >
   ) => {
-    console.log("changed", e.target.value);
-    console.log("name:", e.target.name);
     const { name, value } = e.target;
     setDetails((state) => ({ ...state, [name]: value }));
   };

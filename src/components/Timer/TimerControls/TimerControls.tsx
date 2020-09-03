@@ -48,9 +48,9 @@ const TimerControls: React.FC<ITimerControlsProps> = ({ timer, setTimer }) => {
   const buttonInnerText = timer.isRunning ? "pause" : "start";
 
   return (
-    <div>
+    <div className="TimerControls__">
       <button
-        className={`TimerControls__ ${buttonInnerText}`}
+        className={`TimerControls__btn ${buttonInnerText}`}
         onClick={handleToggleTimer}
       >
         {buttonInnerText}
