@@ -14,3 +14,11 @@
     flex-direction: column;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .Timetable__ {
+    /* offset so "Monday" header does not fall under nav bar initially */
+    position: relative;
+    top: var(--nav-height);
+  }
+}

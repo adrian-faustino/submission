@@ -19,11 +19,14 @@
   color: var(--theme-color3);
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   .Nav__ {
+    width: 110%;
     align-items: center;
     /* move each grouping away rom each other */
     margin: 0 -25px;
+
+    position: fixed;
   }
 
   .Nav__site-logo {
