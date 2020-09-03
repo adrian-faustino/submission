@@ -4,13 +4,17 @@ import "./CardDetails.css";
 /* Constants */
 import { PROJECTS } from "../../../constants/appConfig";
 
+interface ICardDetailsProps {
+  setTimerReady: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
 const initialState = {
   title: "",
   description: "",
   project: PROJECTS[0].title,
 };
 
-const CardDetails = () => {
+const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
   /* State */
   const [details, setDetails] = useState(initialState);
   const [isEditMode, setIsEditMode] = useState(true);
@@ -26,6 +30,13 @@ const CardDetails = () => {
   const handleToggleEditMode = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsEditMode(!isEditMode);
+
+    // only show timer outside of edit mode and after initial data input pressing '+' button
+    if (isEditMode) {
+      setTimerReady(true);
+    } else {
+      setTimerReady(false);
+    }
   };
 
   const handleChange = (

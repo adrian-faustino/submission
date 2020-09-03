@@ -28,7 +28,7 @@ const EntryCard: React.FC<IEntryCardProps> = ({ day, hour }) => {
       {!isNewEntry && <button onClick={handleAddEntry}>+</button>}
 
       {/* // only show once user has selected to input new task */}
-      {isNewEntry && <CardDetails />}
+      {isNewEntry && <CardDetails setTimerReady={setTimerReady} />}
 
       {/* only render when initial details have been input */}
       {timerReady && <Timer />}
