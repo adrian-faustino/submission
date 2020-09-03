@@ -47,3 +47,6 @@ export const PROJECTS: Array<IProject> = [
   { title: "Back-end", color_code: "yellow" },
   { title: "Testing", color_code: "green" },
 ];
+
+// TIMER configs
+export const TIMER_TICK_RATE: number = 300; // 300ms

@@ -9,7 +9,7 @@ import { ITimerState } from "../../constants/types";
 const initialState: ITimerState = {
   isRunning: false,
   totalTime: 0,
-  startTime: Date.now(),
+  startTime: null,
   endTime: null,
 };
 
@@ -26,7 +26,7 @@ const Timer = () => {
       {/* display timer details */}
       <span>Total: {timer.totalTime}</span>
       <span>Start: {timer.startTime}</span>
-      {timer.endTime && <span>End: {timer.endTime}</span>}
+      <span>End: {timer.endTime}</span>
     </div>
   );
 };
