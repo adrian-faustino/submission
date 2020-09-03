@@ -10,6 +10,7 @@ const initialState: ITimerState = {
   isRunning: false,
   totalTime: 0,
   startTime: Date.now(),
+  endTime: null,
 };
 
 const Timer = () => {
@@ -24,6 +25,8 @@ const Timer = () => {
 
       {/* display timer details */}
       <span>Total: {timer.totalTime}</span>
+      <span>Start: {timer.startTime}</span>
+      {timer.endTime && <span>End: {timer.endTime}</span>}
     </div>
   );
 };

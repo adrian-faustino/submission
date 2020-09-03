@@ -16,4 +16,5 @@ export interface ITimerState {
   isRunning: boolean;
   totalTime: number;
   startTime: number;
+  endTime: number | null;
 }
