@@ -26,19 +26,43 @@ const CardDetails = () => {
     setIsEditMode(!isEditMode);
   };
 
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    console.log("changed", e.target.value);
+    console.log("name:", e.target.name);
+    const { name, value } = e.target;
+    setDetails((state) => ({ ...state, [name]: value }));
+  };
+
   const buttonInnerText = isEditMode ? "save" : "edit";
 
   return (
     <div>
       {isEditMode && (
         <form>
-          <input name="title" placeholder="Enter title" />
           <input
+            onChange={handleChange}
+            value={details.title}
             type="text"
+            name="title"
+            placeholder="Enter title"
+          />
+          <textarea
+            onChange={handleChange}
+            value={details.description}
             name="description"
             placeholder="Enter description"
-          />
-          <select name="project">{renderOptionsJSX()}</select>
+          ></textarea>
+          <select
+            onChange={handleChange}
+            value={details.project}
+            name="project"
+          >
+            {renderOptionsJSX()}
+          </select>
         </form>
       )}
       <button onClick={handleToggleEditMode}>{buttonInnerText}</button>
