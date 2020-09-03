@@ -41,6 +41,7 @@ const CardDetails = () => {
 
   return (
     <div>
+      {/* only show form in edit mode */}
       {isEditMode && (
         <form>
           <input
@@ -66,6 +67,15 @@ const CardDetails = () => {
         </form>
       )}
       <button onClick={handleToggleEditMode}>{buttonInnerText}</button>
+
+      {/* only show when not in edit mode */}
+      {!isEditMode && (
+        <>
+          <span>{details.title}</span>
+          <span>{details.description}</span>
+          <span>Project: {details.project}</span>
+        </>
+      )}
     </div>
   );
 };
