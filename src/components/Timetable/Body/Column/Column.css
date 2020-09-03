@@ -13,8 +13,32 @@
 }
 
 .Column__new-entry-btn {
-  margin-bottom: calc(var(--bottom-nav-height) * 2);
+  margin-top: calc(var(--bottom-nav-height) * 2);
+  margin-bottom: calc(var(--bottom-nav-height) * 3);
+  background: var(--theme-color-ok);
+  position: relative;
+  height: 30px;
+  width: 30px;
 }
+.Column__new-entry-btn:hover {
+  background: var(--theme-color-ok2);
+}
+
+/* BEGIN: new entry btn cross */
+.Column__new-entry-btn::before,
+.Column__new-entry-btn::after {
+  content: "";
+  height: 5px;
+  width: 100%;
+  background: var(--theme-color3);
+  position: absolute;
+  top: 40%;
+  left: 0;
+}
+.Column__new-entry-btn::after {
+  transform: rotate(90deg);
+}
+/* END: new entry btn cross */
 
 .Column__total-time-span {
   display: flex;

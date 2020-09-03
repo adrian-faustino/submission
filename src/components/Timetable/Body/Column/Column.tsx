@@ -55,9 +55,10 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
       <div>{renderEntriesJSX()}</div>
 
       {/* button to add new entry */}
-      <button className="Column__new-entry-btn" onClick={handleAddNewEntry}>
-        +
-      </button>
+      <button
+        className="Column__new-entry-btn"
+        onClick={handleAddNewEntry}
+      ></button>
 
       {/* footer of each column to show total time this day */}
       <span className="Column__total-time-span center-text">
