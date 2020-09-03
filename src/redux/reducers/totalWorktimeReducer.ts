@@ -7,7 +7,7 @@ interface IRootState {
 }
 
 const initialState: IRootState = {
-  allEntries: [{ entryID: "22", entryTotalTime: 20 }],
+  allEntries: [],
 };
 
 const totalWorktimeReducer: Reducer<IRootState, any> = (

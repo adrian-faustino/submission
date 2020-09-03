@@ -22,7 +22,7 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
   const [entries, setEntries] = useState<IEntry[]>([]);
   /* Redux */
   const dispatch = useDispatch();
-  const allEntries = useSelector(
+  const allEntries: Array<IEntry> = useSelector(
     (state: RootStateOrAny) => state.totalWorktime.allEntries
   );
 
@@ -54,15 +54,14 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
     setEntries(updatedArr);
 
     // update weekly total
-    // const updatedGlobalArr = allEntries.map((entry) => {
-    //   if (entry.entryID === id) {
-    //     return { ...entry, entryTotalTime: newTotal };
-    //   } else {
-    //     return entry;
-    //   }
-    // });
-
-    // dispatch(updateEntriesArray(updatedGlobalArr));
+    const updatedGlobalArr = allEntries.map((entry) => {
+      if (entry.entryID === id) {
+        return { ...entry, entryTotalTime: newTotal };
+      } else {
+        return entry;
+      }
+    });
+    dispatch(updateEntriesArray(updatedGlobalArr));
   };
 
   const renderEntriesJSX = () => {
