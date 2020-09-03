@@ -16,8 +16,7 @@ const EntryCard: React.FC<IEntryCardProps> = ({ day, hour }) => {
   const [isNewEntry, setIsNewEntry] = useState(false);
 
   const handleAddEntry = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("clicked");
-
+    e.preventDefault();
     setIsNewEntry(true);
   };
 
