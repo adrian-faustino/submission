@@ -45,11 +45,11 @@
 .CardDetails__form > * {
   width: 100%;
   margin-bottom: 6px;
+  outline: none;
 }
 
 .CardDetails__form > textarea,
 .CardDetails__form > input {
   /* move placeholder text to right */
   padding-left: 4px;
-  outline: none;
 }
