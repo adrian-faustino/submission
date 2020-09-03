@@ -33,3 +33,25 @@ export const formatDateObj = (date: Date) => {
 
   return `${month} ${_date}, ${hours}:${minutes}:${seconds}`;
 };
+
+// convert total seconds to HH:MM
+export const formatMStoHHMMSS = (s: number) => {
+  let remainder = s;
+  const h = Math.floor(remainder / 60 / 60);
+  remainder -= h * 60;
+  const m = Math.floor(remainder / 60);
+  remainder -= m * 60;
+  const _s = Math.floor(remainder);
+
+  let resultStr = ``;
+  // if hours are present, then conditionally concat to result
+  h > 0 && (resultStr = resultStr + `${formatLeadingZeros(h, 2)}:`);
+
+  // always show min, even if at 0
+  resultStr = resultStr + `${formatLeadingZeros(m, 2)}`;
+
+  // always show second, even if at 0
+  resultStr = resultStr + `:${formatLeadingZeros(_s, 2)}`;
+
+  return resultStr;
+};

@@ -6,7 +6,7 @@ import { TimerControls } from "../";
 /* Constants */
 import { ITimerState } from "../../constants/types";
 /* Util */
-import { formatDateObj } from "../../util/timeFormatHelpers";
+import { formatDateObj, formatMStoHHMMSS } from "../../util/timeFormatHelpers";
 
 interface ITimerProps {
   handleNewTotal: (seconds: number) => void;
@@ -33,7 +33,7 @@ const Timer: React.FC<ITimerProps> = ({ handleNewTotal }) => {
       {/* display timer details */}
       <div className="Timer__info-container">
         <label>Total:</label>
-        <span>{timer.totalTime.toFixed(2)}</span>
+        <span>{formatMStoHHMMSS(timer.totalTime)}</span>
         <label>Start:</label>
         <span>{timer.startTime && formatDateObj(timer.startTime)}</span>
         <label>End:</label>

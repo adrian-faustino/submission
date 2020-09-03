@@ -13,8 +13,8 @@
 }
 
 .Column__new-entry-btn {
-  margin-top: calc(var(--bottom-nav-height) * 2);
-  margin-bottom: calc(var(--bottom-nav-height) * 3);
+  margin-top: calc(var(--bottom-nav-height));
+  margin-bottom: calc(var(--bottom-nav-height) * 2);
   background: var(--theme-color-ok);
   position: relative;
   height: 30px;
@@ -41,11 +41,13 @@
 /* END: new entry btn cross */
 
 .Column__total-time-span {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   position: fixed;
   bottom: 0;
   height: var(--bottom-nav-height);
   background: white;
-  padding: 0 15px;
   border-radius: 0 7px 0 0;
+  width: 12vw;
+  padding: 0 7px 0 0;
 }

@@ -5,6 +5,8 @@ import "./Column.css";
 import { IDay, IEntry } from "../../../../constants/types";
 /* Subcomponents */
 import { EntryCard } from "../../../";
+/* Util */
+import { formatMStoHHMMSS } from "../../../../util/timeFormatHelpers";
 
 interface IColumnProps {
   day: IDay;
@@ -62,7 +64,8 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
 
       {/* footer of each column to show total time this day */}
       <span className="Column__total-time-span center-text box-shadow">
-        Total time:{columnTotalTime.toFixed(2)}
+        <b>Total time:</b>
+        <div>{formatMStoHHMMSS(columnTotalTime)}</div>
       </span>
     </div>
   );
