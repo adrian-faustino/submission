@@ -18,3 +18,9 @@ export interface ITimerState {
   startTime: Date | null;
   endTime: Date | null;
 }
+
+// for Column.tsx
+export interface IEntry {
+  entryID: string;
+  entryTotalTime: number;
+}

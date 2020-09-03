@@ -2,7 +2,7 @@ import React, { useState } from "react";
 /* Styles */
 import "./Column.css";
 /* Constants */
-import { IDay } from "../../../../constants/types";
+import { IDay, IEntry } from "../../../../constants/types";
 /* Subcomponents */
 import { EntryCard } from "../../../";
 
@@ -11,17 +11,40 @@ interface IColumnProps {
 }
 
 const Column: React.FC<IColumnProps> = ({ day }) => {
-  const [entries, setEntries] = useState<number[]>([]);
+  const [entries, setEntries] = useState<IEntry[]>([]);
 
   const handleAddNewEntry = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log("Adding new entry...");
-    setEntries([...entries, Math.random()]);
+    setEntries([
+      ...entries,
+      { entryTotalTime: 0, entryID: `${day.short}-${Date.now()}` },
+    ]);
+  };
+
+  const updateThisEntryTotal = (id: string, newTotal: number) => {
+    const updatedArr = entries.map((entry) => {
+      if (entry.entryID === id) {
+        return { ...entry, entryTotalTime: newTotal };
+      } else {
+        return entry;
+      }
+    });
+
+    console.log("Updating column total...");
+    setEntries(updatedArr);
   };
 
   const renderEntriesJSX = () => {
-    return entries.map((entry) => <EntryCard />);
+    return entries.map((entry) => (
+      <EntryCard entry={entry} updateThisEntryTotal={updateThisEntryTotal} />
+    ));
   };
+
+  const columnTotalTime = entries.reduce(
+    (acc, entry) => acc + entry.entryTotalTime,
+    0
+  );
 
   return (
     <div>
@@ -29,12 +52,13 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
       <h3 className="Column__header">{day.long}</h3>
 
       {/* render all entries */}
-      {renderEntriesJSX()}
+      <div>{renderEntriesJSX()}</div>
 
       {/* button to add new entry */}
       <button onClick={handleAddNewEntry}>+</button>
 
       {/* footer of each column to show total time this day */}
+      <span>Total time:{columnTotalTime}</span>
     </div>
   );
 };

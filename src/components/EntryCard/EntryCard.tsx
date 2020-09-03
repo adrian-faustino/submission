@@ -2,18 +2,24 @@ import React, { useState } from "react";
 /* Styles */
 import "./EntryCard.css";
 /* Constants */
-import { IDay, IHour } from "../../constants/types";
+import { IDay, IHour, IEntry } from "../../constants/types";
 /* Subcomponents */
 import { CardDetails, Timer } from "../";
 
-const EntryCard = () => {
+interface IEntryCardProps {
+  entry: IEntry;
+  updateThisEntryTotal: (id: string, newTotal: number) => void;
+}
+
+const EntryCard: React.FC<IEntryCardProps> = ({
+  entry,
+  updateThisEntryTotal,
+}) => {
   /* State */
-  const [isNewEntry, setIsNewEntry] = useState(false);
   const [timerReady, setTimerReady] = useState(false);
 
-  const handleAddEntry = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    setIsNewEntry(true);
+  const handleNewTotal = (seconds: number) => {
+    updateThisEntryTotal(entry.entryID, seconds);
   };
 
   return (
@@ -21,7 +27,7 @@ const EntryCard = () => {
       <CardDetails setTimerReady={setTimerReady} />
 
       {/* only render when initial details have been input */}
-      {timerReady && <Timer />}
+      {timerReady && <Timer handleNewTotal={handleNewTotal} />}
     </div>
   );
 };
