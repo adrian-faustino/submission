@@ -12,7 +12,7 @@ const App = () => {
       <Nav />
       <Timetable />
 
-      <TestView />
+      {/* <TestView /> */}
     </div>
   );
 };

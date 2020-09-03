@@ -6,15 +6,17 @@ import { Headers, Body, Footers } from "../";
 
 const Timetable = () => {
   return (
-    <section>
-      {/* headers */}
-      <Headers />
+    <section className="Timetable__">
+      <div className="Timetable__columns-container">
+        {/* headers */}
+        <Headers />
 
-      {/* body */}
-      <Body />
+        {/* body */}
+        <Body />
 
-      {/* footers */}
-      <Footers />
+        {/* footers */}
+        <Footers />
+      </div>
     </section>
   );
 };
