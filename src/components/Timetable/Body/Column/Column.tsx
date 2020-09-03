@@ -7,6 +7,12 @@ import { IDay, IEntry } from "../../../../constants/types";
 import { EntryCard } from "../../../";
 /* Util */
 import { formatMStoHHMMSS } from "../../../../util/timeFormatHelpers";
+/* Redux */
+import {
+  addNewEntry,
+  updateEntriesArray,
+} from "../../../../redux/actions/totalWorktimeActions";
+import { useDispatch, useSelector, RootStateOrAny } from "react-redux";
 
 interface IColumnProps {
   day: IDay;
@@ -14,14 +20,23 @@ interface IColumnProps {
 
 const Column: React.FC<IColumnProps> = ({ day }) => {
   const [entries, setEntries] = useState<IEntry[]>([]);
+  /* Redux */
+  const dispatch = useDispatch();
+  const allEntries = useSelector(
+    (state: RootStateOrAny) => state.totalWorktime.allEntries
+  );
 
   const handleAddNewEntry = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log("Adding new entry...");
-    setEntries([
-      ...entries,
-      { entryTotalTime: 0, entryID: `${day.short}-${Date.now()}` },
-    ]);
+    const newEntry = {
+      entryTotalTime: 0,
+      entryID: `${day.short}-${Date.now()}`,
+    };
+    // add entry to array within same column
+    setEntries([...entries, newEntry]);
+    // add entry to global array of entries
+    dispatch(addNewEntry(newEntry));
   };
 
   const updateThisEntryTotal = (id: string, newTotal: number) => {
@@ -34,7 +49,20 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
     });
 
     console.log("Updating column total...");
+
+    // update column total
     setEntries(updatedArr);
+
+    // update weekly total
+    // const updatedGlobalArr = allEntries.map((entry) => {
+    //   if (entry.entryID === id) {
+    //     return { ...entry, entryTotalTime: newTotal };
+    //   } else {
+    //     return entry;
+    //   }
+    // });
+
+    // dispatch(updateEntriesArray(updatedGlobalArr));
   };
 
   const renderEntriesJSX = () => {

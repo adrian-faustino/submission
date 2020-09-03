@@ -19,6 +19,7 @@ const EntryCard: React.FC<IEntryCardProps> = ({
   const [timerReady, setTimerReady] = useState(false);
 
   const handleNewTotal = (seconds: number) => {
+    // update column total
     updateThisEntryTotal(entry.entryID, seconds);
   };
 
