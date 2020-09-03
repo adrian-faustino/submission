@@ -5,6 +5,8 @@ import "./Timer.css";
 import { TimerControls } from "../";
 /* Constants */
 import { ITimerState } from "../../constants/types";
+/* Util */
+import { formatDateObj } from "../../util/timeFormatHelpers";
 
 const initialState: ITimerState = {
   isRunning: false,
@@ -25,8 +27,8 @@ const Timer = () => {
 
       {/* display timer details */}
       <span>Total: {timer.totalTime}</span>
-      <span>Start: {timer.startTime}</span>
-      <span>End: {timer.endTime}</span>
+      <span>Start: {timer.startTime && formatDateObj(timer.startTime)}</span>
+      <span>End: {timer.endTime && formatDateObj(timer.endTime)}</span>
     </div>
   );
 };

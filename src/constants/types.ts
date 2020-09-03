@@ -15,6 +15,6 @@ export interface IProject {
 export interface ITimerState {
   isRunning: boolean;
   totalTime: number;
-  startTime: null | number | null;
-  endTime: number | null;
+  startTime: Date | null;
+  endTime: Date | null;
 }

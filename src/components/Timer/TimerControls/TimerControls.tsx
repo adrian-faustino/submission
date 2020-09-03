@@ -17,19 +17,19 @@ const TimerControls: React.FC<ITimerControlsProps> = ({ timer, setTimer }) => {
       interval = setInterval(() => {
         setTimer((state) => ({
           ...state,
-          totalTime: timer.totalTime += TIMER_TICK_RATE / 1000,
+          totalTime: timer.totalTime += TIMER_TICK_RATE / 1000, // 1000 ms
         }));
       }, TIMER_TICK_RATE);
 
       // if it's the first time stopwatch is being started, set start time
       if (!timer.startTime) {
-        setTimer((state) => ({ ...state, startTime: Date.now() }));
+        setTimer((state) => ({ ...state, startTime: new Date() }));
       }
 
       // else if it's not supposed to be running and it was already running before, stop interval and set last "endTime"
     } else if (!timer.isRunning && timer.totalTime !== 0) {
       interval && clearInterval(interval);
-      setTimer((state) => ({ ...state, endTime: Date.now() }));
+      setTimer((state) => ({ ...state, endTime: new Date() }));
     }
 
     // clean up any intervals on unmount
