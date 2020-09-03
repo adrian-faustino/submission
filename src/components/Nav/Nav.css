@@ -1,4 +1,7 @@
 .Nav__ {
-  background: blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
   height: var(--nav-height);
+  box-shadow: 0 0 8px black;
 }

@@ -4,8 +4,9 @@ import "./Nav.css";
 
 const Nav = () => {
   return (
-    <section className="Nav__ center-text-wFlex">
-      <h3>nav</h3>
+    <section className="Nav__ center-text">
+      <h3>Logo</h3>
+      <span>Total minutes this week:</span>
     </section>
   );
 };
