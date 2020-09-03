@@ -1,3 +1,4 @@
 .Timer__ {
-  background: brown;
+  background: var(--theme-color1);
+  margin-top: 5px;
 }

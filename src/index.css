@@ -26,6 +26,20 @@ code {
   --font-size-l: 24px;
   --font-size-xl: 30px;
   --font-size-xxl: 35px;
+
+  /* color scheme */
+  --theme-color1: #d66853;
+  --theme-color2: #7d4e57;
+  --theme-color3: #364156;
+  --theme-color4: #212d40;
+  --theme-color5: #11151c;
+}
+
+/* element defaults  */
+button {
+  box-shadow: 0 0 5px black;
+  border-radius: 5px !important;
+  border: none;
 }
 
 /* center inner text vertically and horizontally */
