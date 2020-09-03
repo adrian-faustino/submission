@@ -6,14 +6,12 @@ import { DAYS_OF_WEEK } from "../../../constants/appConfig";
 
 const Body = () => {
   const renderBodyColumnJSX = () => {
-    return DAYS_OF_WEEK.map((day) => <div>{day.long}</div>);
+    return DAYS_OF_WEEK.map((day, i) => (
+      <div key={`${day}-${i}-column`}>{day.long}</div>
+    ));
   };
 
-  return (
-    <section className="Body__ Headers__ center-text">
-      {renderBodyColumnJSX()}
-    </section>
-  );
+  return <section>{renderBodyColumnJSX()}</section>;
 };
 
 export default Body;

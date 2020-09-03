@@ -7,17 +7,11 @@ import { DAYS_OF_WEEK } from "../../../constants/appConfig";
 const Headers = () => {
   const renderHeadersJSX = () => {
     return DAYS_OF_WEEK.map((day, i) => (
-      <span className="Headers__item" key={`${day}-${i}-header`}>
-        {day.short}
-      </span>
+      <span key={`${day}-${i}-header`}>{day.short}</span>
     ));
   };
 
-  return (
-    <section className="Headers__ center-text box-shadow">
-      {renderHeadersJSX()}
-    </section>
-  );
+  return <section>{renderHeadersJSX()}</section>;
 };
 
 export default Headers;
