@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 /* Styles */
 import "./index.css";
+/* Reactstrap */
 import "bootstrap/dist/css/bootstrap.min.css";
 /* Subcomponents */
 import App from "./App/App";
