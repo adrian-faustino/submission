@@ -51,6 +51,7 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
   };
 
   const buttonInnerText = isEditMode ? "save" : "edit";
+  const buttonCSSClass = isEditMode && "edit-mode";
 
   return (
     <div>
@@ -79,15 +80,24 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
           </select>
         </form>
       )}
-      <button onClick={handleToggleEditMode}>{buttonInnerText}</button>
+      <button
+        className={`CardDetails__settings-btn ${buttonCSSClass}`}
+        onClick={handleToggleEditMode}
+      >
+        {buttonInnerText}
+      </button>
 
       {/* only show when not in edit mode */}
       {!isEditMode && (
-        <>
-          <span>Title:{details.title}</span>
-          <span>Description:{details.description}</span>
-          <span>Project: {details.project}</span>
-        </>
+        <div className="CardDetails__info-container">
+          <span className="CardDetails__title">{details.title}</span>
+          <span className="CardDetails__description">
+            {details.description}
+          </span>
+          <span className="CardDetails__project border-rad">
+            {details.project}
+          </span>
+        </div>
       )}
     </div>
   );

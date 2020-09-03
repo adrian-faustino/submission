@@ -30,8 +30,6 @@ const Timer: React.FC<ITimerProps> = ({ handleNewTotal }) => {
 
   return (
     <div className="Timer__">
-      <h3>Timer</h3>
-
       <TimerControls timer={timer} setTimer={setTimer} />
 
       {/* display timer details */}

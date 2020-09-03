@@ -19,6 +19,13 @@ code {
 :root {
   /* offets (heights, widths) */
   --nav-height: 8vh;
+
+  /* font sizes */
+  --font-size-sm: 15px;
+  --font-size-m: 20px;
+  --font-size-l: 24px;
+  --font-size-xl: 30px;
+  --font-size-xxl: 35px;
 }
 
 /* center inner text vertically and horizontally */
