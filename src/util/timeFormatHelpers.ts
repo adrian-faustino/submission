@@ -5,10 +5,10 @@ export const formatMonth = (index: number) => {
     "Mar",
     "Apr",
     "May",
-    "June",
-    "July",
+    "Jun",
+    "Jul",
     "Aug",
-    "Sept",
+    "Sep",
     "Oct",
     "Nov",
     "Dec",
@@ -29,9 +29,8 @@ export const formatDateObj = (date: Date) => {
   const _date = formatLeadingZeros(date.getDate(), 2);
   const hours = formatLeadingZeros(date.getHours(), 2);
   const minutes = formatLeadingZeros(date.getMinutes(), 2);
-  const seconds = formatLeadingZeros(date.getSeconds(), 2);
 
-  return `${month} ${_date}, ${hours}:${minutes}:${seconds}`;
+  return `${month} ${_date}, ${hours}:${minutes}`;
 };
 
 // convert total seconds to HH:MM
