@@ -14,6 +14,7 @@ export const DAYS_OF_WEEK: Array<IDay> = [
 
 // Static list of projects used for dropdown to categorize each task.
 export const PROJECTS: Array<IProject> = [
+  { title: "Misc", color_code: "lightgray" },
   { title: "UI/UX", color_code: "lightblue" },
   { title: "Front-end", color_code: "pink" },
   { title: "Back-end", color_code: "yellow" },

@@ -65,14 +65,14 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
             value={details.title}
             type="text"
             name="title"
-            placeholder="Enter title"
+            placeholder="Enter task title"
             autoComplete="off"
           />
           <textarea
             onChange={handleChange}
             value={details.description}
             name="description"
-            placeholder="Enter description"
+            placeholder="Enter task description"
             autoComplete="off"
           ></textarea>
           <select
