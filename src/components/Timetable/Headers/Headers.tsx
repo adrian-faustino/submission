@@ -3,11 +3,13 @@ import React from "react";
 import { DAYS_OF_WEEK } from "../../../constants/appConfig";
 
 const Headers = () => {
-  return (
-    <div>
-      <h3>monday</h3>
-    </div>
-  );
+  const renderHeadersJSX = () => {
+    return DAYS_OF_WEEK.map((day, i) => (
+      <span key={`${day}-${i}-header`}>{day.short}</span>
+    ));
+  };
+
+  return <div>{renderHeadersJSX()}</div>;
 };
 
 export default Headers;
