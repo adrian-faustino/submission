@@ -2,10 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 /* Styles */
 import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 /* Subcomponents */
 import App from "./App/App";
-
-/* Redux */
 
 ReactDOM.render(
   <React.StrictMode>
