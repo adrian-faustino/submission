@@ -1,6 +1,6 @@
 // constant variables that will be used to create the app's skeleton
 
-import { IDay, IHour, IProject } from "../constants/types";
+import { IDay, IProject } from "../constants/types";
 
 export const DAYS_OF_WEEK: Array<IDay> = [
   { long: "Monday", short: "Mon", index: 0 },

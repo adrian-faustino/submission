@@ -2,7 +2,7 @@ import React, { useState } from "react";
 /* Styles */
 import "./EntryCard.css";
 /* Constants */
-import { IDay, IHour, IEntry } from "../../constants/types";
+import { IEntry } from "../../constants/types";
 /* Subcomponents */
 import { CardDetails, Timer } from "../";
 

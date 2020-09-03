@@ -48,8 +48,6 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
       }
     });
 
-    console.log("Updating column total...");
-
     // update column total
     setEntries(updatedArr);
 
@@ -65,8 +63,12 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
   };
 
   const renderEntriesJSX = () => {
-    return entries.map((entry) => (
-      <EntryCard entry={entry} updateThisEntryTotal={updateThisEntryTotal} />
+    return entries.map((entry, i) => (
+      <EntryCard
+        key={`${entry.entryID}-${i}-entryCard`}
+        entry={entry}
+        updateThisEntryTotal={updateThisEntryTotal}
+      />
     ));
   };
 

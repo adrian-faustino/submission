@@ -2,7 +2,7 @@ import React from "react";
 /* Styles */
 import "./Timetable.css";
 /* Subcomponents */
-import { Headers, Body, Footers, Column } from "../";
+import { Column } from "../";
 /* Constants */
 import { DAYS_OF_WEEK } from "../../constants/appConfig";
 
@@ -11,7 +11,7 @@ const Timetable = () => {
     <section className="Timetable__">
       <div className="Timetable__columns-container">
         {DAYS_OF_WEEK.map((day) => (
-          <Column day={day} />
+          <Column key={`${day.short}-column`} day={day} />
         ))}
       </div>
     </section>

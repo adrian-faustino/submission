@@ -38,7 +38,7 @@ const TimerControls: React.FC<ITimerControlsProps> = ({ timer, setTimer }) => {
     return () => {
       interval && clearInterval(interval);
     };
-  }, [timer.isRunning, timer.totalTime]);
+  }, [timer.isRunning, timer.totalTime, timer.startTime, setTimer]);
 
   const handleToggleTimer = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
