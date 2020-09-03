@@ -5,3 +5,8 @@ export interface IDay {
 }
 
 export type IHour = number;
+
+export interface IProject {
+  title: string;
+  color_code: string;
+}

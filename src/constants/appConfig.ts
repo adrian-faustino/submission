@@ -1,6 +1,6 @@
 // constant variables that will be used to create the app's skeleton
 
-import { IDay, IHour } from "../constants/types";
+import { IDay, IHour, IProject } from "../constants/types";
 
 export const DAYS_OF_WEEK: Array<IDay> = [
   { long: "Monday", short: "Mon", index: 0 },
@@ -38,4 +38,12 @@ export const HOURS_PER_DAY: Array<IHour> = [
   21,
   22,
   23,
+];
+
+// Static list of projects used for dropdown to categorize each task.
+export const PROJECTS: Array<IProject> = [
+  { title: "UI/UX", color_code: "blue" },
+  { title: "Front-end", color_code: "pink" },
+  { title: "Back-end", color_code: "yellow" },
+  { title: "Testing", color_code: "green" },
 ];
