@@ -11,11 +11,16 @@ interface IColumnProps {
 }
 
 const Column: React.FC<IColumnProps> = ({ day }) => {
-  const [entries, setEntries] = useState(null);
+  const [entries, setEntries] = useState<number[]>([]);
 
   const handleAddNewEntry = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log("Adding new entry...");
+    setEntries([...entries, Math.random()]);
+  };
+
+  const renderEntriesJSX = () => {
+    return entries.map((entry) => <EntryCard />);
   };
 
   return (
@@ -23,7 +28,13 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
       {/* column header */}
       <h3 className="Column__header">{day.long}</h3>
 
+      {/* render all entries */}
+      {renderEntriesJSX()}
+
+      {/* button to add new entry */}
       <button onClick={handleAddNewEntry}>+</button>
+
+      {/* footer of each column to show total time this day */}
     </div>
   );
 };

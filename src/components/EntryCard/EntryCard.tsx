@@ -6,11 +6,7 @@ import { IDay, IHour } from "../../constants/types";
 /* Subcomponents */
 import { CardDetails, Timer } from "../";
 
-interface IEntryCardProps {
-  day: IDay;
-}
-
-const EntryCard: React.FC<IEntryCardProps> = ({ day }) => {
+const EntryCard = () => {
   /* State */
   const [isNewEntry, setIsNewEntry] = useState(false);
   const [timerReady, setTimerReady] = useState(false);
@@ -22,11 +18,7 @@ const EntryCard: React.FC<IEntryCardProps> = ({ day }) => {
 
   return (
     <div className="EntryCard__ box-shadow border-rad">
-      <span>{day.short}</span>
-      {!isNewEntry && <button onClick={handleAddEntry}>+</button>}
-
-      {/* // only show once user has selected to input new task */}
-      {isNewEntry && <CardDetails setTimerReady={setTimerReady} />}
+      <CardDetails setTimerReady={setTimerReady} />
 
       {/* only render when initial details have been input */}
       {timerReady && <Timer />}
