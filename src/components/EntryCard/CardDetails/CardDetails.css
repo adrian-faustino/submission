@@ -32,5 +32,6 @@
 }
 
 .CardDetails__settings-btn.edit-mode {
-  color: rgb(9, 112, 147);
+  background: var(--theme-color-info);
+  color: rgba(28, 28, 28, 0.833);
 }

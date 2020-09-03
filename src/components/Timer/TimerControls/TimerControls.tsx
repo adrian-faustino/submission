@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+/* Styles */
+import "./TimerControls.css";
 /* Constants */
 import { ITimerState } from "../../../constants/types";
 import { TIMER_TICK_RATE } from "../../../constants/appConfig";
@@ -44,9 +46,15 @@ const TimerControls: React.FC<ITimerControlsProps> = ({ timer, setTimer }) => {
   };
 
   const buttonInnerText = timer.isRunning ? "pause" : "start";
+
   return (
     <div>
-      <button onClick={handleToggleTimer}>{buttonInnerText}</button>
+      <button
+        className={`TimerControls__ ${buttonInnerText}`}
+        onClick={handleToggleTimer}
+      >
+        {buttonInnerText}
+      </button>
     </div>
   );
 };

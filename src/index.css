@@ -33,13 +33,19 @@ code {
   --theme-color3: #364156;
   --theme-color4: #212d40;
   --theme-color5: #11151c;
+  --theme-color-info: rgb(9, 130, 171);
+  --theme-color-warning: red;
+  --theme-color-ok: rgb(13, 164, 13);
 }
 
 /* element defaults  */
 button {
   box-shadow: 0 0 5px black;
-  border-radius: 5px !important;
   border: none;
+
+  /* OVERRIDE: Reactstrap */
+  outline: none !important;
+  border-radius: 5px !important;
 }
 
 /* center inner text vertically and horizontally */

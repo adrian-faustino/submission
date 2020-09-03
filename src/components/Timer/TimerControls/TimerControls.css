@@ -1,0 +1,7 @@
+.TimerControls__.pause {
+  background: var(--theme-color-warning);
+}
+
+.TimerControls__.start {
+  background: var(--theme-color-ok);
+}
