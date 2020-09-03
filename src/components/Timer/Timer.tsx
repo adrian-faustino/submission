@@ -38,11 +38,17 @@ const Timer: React.FC<ITimerProps> = ({ handleNewTotal }) => {
       {/* display timer details */}
       <div className="Timer__info-container">
         <label>Total:</label>
+
+        {/* Total */}
         <span className={`Timer__time-span ${timerSpanClass}`}>
           {formatMStoHHMMSS(timer.totalTime)}
         </span>
+
+        {/* Start */}
         <label>Start:</label>
         <span>{timer.startTime && formatDateObj(timer.startTime)}</span>
+
+        {/* End */}
         <label>End:</label>
         <span>{timer.endTime && formatDateObj(timer.endTime)}</span>
       </div>

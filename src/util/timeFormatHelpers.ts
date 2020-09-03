@@ -23,14 +23,21 @@ export const formatLeadingZeros = (char: number | string, pad: number) => {
   return result;
 };
 
-// return HH:MM:SS
+// return HH:MM:SS and AM/PM
 export const formatDateObj = (date: Date) => {
   const month = formatMonth(date.getMonth());
   const _date = formatLeadingZeros(date.getDate(), 2);
-  const hours = formatLeadingZeros(date.getHours(), 2);
+  let hours: number | string = date.getHours();
   const minutes = formatLeadingZeros(date.getMinutes(), 2);
+  let am_pm = "am";
 
-  return `${month} ${_date}, ${hours}:${minutes}`;
+  if (hours > 12) {
+    hours -= 12;
+    hours = formatLeadingZeros(hours, 2);
+    am_pm = "pm";
+  }
+
+  return `${month} ${_date}, ${hours}:${minutes} ${am_pm}`;
 };
 
 // convert total seconds to HH:MM
