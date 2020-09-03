@@ -36,6 +36,7 @@ code {
   --theme-color-info: #008cba;
   --theme-color-warning: #f44336;
   --theme-color-ok: #4caf50;
+  --theme-font-white: rgb(211, 211, 211);
 }
 
 /* element defaults  */
