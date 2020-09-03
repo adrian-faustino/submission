@@ -19,6 +19,7 @@ code {
 :root {
   /* offets (heights, widths) */
   --nav-height: 8vh;
+  --bottom-nav-height: 5vh;
 
   /* font sizes */
   --font-size-sm: 15px;

@@ -1,10 +1,26 @@
 .Column__ {
   /* ensure on load bg is covering view */
   min-height: calc(100vh - var(--nav-height));
+
+  position: relative;
 }
 
 .Column__header {
   background: var(--theme-color3);
   color: var(--theme-font-white);
   padding: 5px 0;
+}
+
+.Column__new-entry-btn {
+  margin-bottom: var(--bottom-nav-height);
+}
+
+.Column__total-time-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  height: var(--bottom-nav-height);
+  background: white;
 }
