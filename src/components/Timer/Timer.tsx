@@ -26,6 +26,8 @@ const Timer: React.FC<ITimerProps> = ({ handleNewTotal }) => {
   // whenever timer total time is updated, update column total time
   useEffect(() => {
     handleNewTotal(timer.totalTime);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timer.totalTime]);
 
   return (
