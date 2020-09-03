@@ -73,8 +73,8 @@ const CardDetails = () => {
       {/* only show when not in edit mode */}
       {!isEditMode && (
         <>
-          <span>{details.title}</span>
-          <span>{details.description}</span>
+          <span>Title:{details.title}</span>
+          <span>Description:{details.description}</span>
           <span>Project: {details.project}</span>
         </>
       )}

@@ -4,7 +4,7 @@ import "./EntryCard.css";
 /* Constants */
 import { IDay, IHour } from "../../constants/types";
 /* Subcomponents */
-import { CardDetails } from "../";
+import { CardDetails, Timer } from "../";
 
 interface IEntryCardProps {
   day: IDay;
@@ -14,6 +14,7 @@ interface IEntryCardProps {
 const EntryCard: React.FC<IEntryCardProps> = ({ day, hour }) => {
   /* State */
   const [isNewEntry, setIsNewEntry] = useState(false);
+  const [timerReady, setTimerReady] = useState(false);
 
   const handleAddEntry = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -28,6 +29,9 @@ const EntryCard: React.FC<IEntryCardProps> = ({ day, hour }) => {
 
       {/* // only show once user has selected to input new task */}
       {isNewEntry && <CardDetails />}
+
+      {/* only render when initial details have been input */}
+      {timerReady && <Timer />}
     </div>
   );
 };

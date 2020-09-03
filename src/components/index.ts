@@ -13,3 +13,4 @@ export { default as Column } from "./Timetable/Body/Column/Column";
 
 // Within EntryCard component
 export { default as CardDetails } from "./EntryCard/CardDetails/CardDetails";
+export { default as Timer } from "./EntryCard/Timer/Timer";
