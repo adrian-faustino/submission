@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 /* Styles */
 import "./CardDetails.css";
 /* Constants */
 import { PROJECTS } from "../../../constants/appConfig";
 
+const initialState = {
+  title: "",
+  description: "",
+  project: "",
+};
+
 const CardDetails = () => {
+  /* State */
+  const [details, setDetails] = useState(initialState);
+  const [isEditMode, setIsEditMode] = useState(true);
+
   const renderOptionsJSX = () => {
     return PROJECTS.map((project, i) => (
       <option value={project.title}>{project.title}</option>
@@ -13,17 +23,25 @@ const CardDetails = () => {
 
   const handleToggleEditMode = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    setIsEditMode(!isEditMode);
   };
+
+  const buttonInnerText = isEditMode ? "save" : "edit";
 
   return (
     <div>
-      <form>
-        <input name="title" placeholder="Enter title" />
-        <input type="text" name="description" placeholder="Enter description" />
-        <select name="project">{renderOptionsJSX()}</select>
-
-        <button onClick={handleToggleEditMode}>save</button>
-      </form>
+      {isEditMode && (
+        <form>
+          <input name="title" placeholder="Enter title" />
+          <input
+            type="text"
+            name="description"
+            placeholder="Enter description"
+          />
+          <select name="project">{renderOptionsJSX()}</select>
+        </form>
+      )}
+      <button onClick={handleToggleEditMode}>{buttonInnerText}</button>
     </div>
   );
 };
