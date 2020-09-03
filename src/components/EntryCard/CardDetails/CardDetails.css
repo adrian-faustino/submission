@@ -60,6 +60,7 @@
   color: white;
 }
 
+/* BEGIN: Form section */
 /* make sure all stretch to fit card width */
 .CardDetails__form > * {
   width: 100%;
@@ -67,8 +68,13 @@
   outline: none;
 }
 
+.CardDetails__select {
+  background: var(--theme-font-white);
+}
+
 .CardDetails__form > textarea,
 .CardDetails__form > input {
   /* move placeholder text to right */
   padding-left: 4px;
 }
+/* END: Form section */

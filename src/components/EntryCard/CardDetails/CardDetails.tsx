@@ -76,6 +76,7 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
             autoComplete="off"
           ></textarea>
           <select
+            className="CardDetails__select"
             onChange={handleChange}
             value={details.project}
             name="project"
