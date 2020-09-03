@@ -15,6 +15,10 @@
   color: var(--theme-font-white);
 }
 
+.Nav__site-logo > b {
+  color: var(--theme-color4);
+}
+
 .Nav__weekly--total-span {
   color: var(--theme-color3);
 }

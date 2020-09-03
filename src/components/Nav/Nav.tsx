@@ -19,7 +19,9 @@ const Nav = () => {
 
   return (
     <section className="Nav__ center-text">
-      <h1 className="Nav__site-logo">Time Tracker</h1>
+      <h1 className="Nav__site-logo">
+        Time <b>Tracker</b>
+      </h1>
       <span className="Nav__weekly--total-span">
         <b>Weekly hours:</b> {formatMStoHourFloat(total)}
       </span>

@@ -1,5 +1,7 @@
 Link to the site: https://timetracker-lite.netlify.app/
 
+_mobile/tablet friendly_
+
 ## How to run locally
 
 1. Clone repo and go into client folder.
