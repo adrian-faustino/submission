@@ -14,7 +14,7 @@
 }
 
 .CardDetails__description {
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-s);
   font-weight: 400;
   color: rgb(57, 57, 57);
 }

@@ -83,9 +83,11 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
       {/* only show when not in edit mode */}
       {!isEditMode && (
         <div className="CardDetails__info-container">
-          <span className="CardDetails__title">{details.title}</span>
+          <span className="CardDetails__title">
+            {details.title || "Untitled"}
+          </span>
           <span className="CardDetails__description">
-            {details.description}
+            {details.description || "No description provided."}
           </span>
           <span className="CardDetails__project border-rad">
             {details.project}
