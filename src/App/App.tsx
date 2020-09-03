@@ -2,7 +2,7 @@ import React from "react";
 /* Styles */
 import "./App.css";
 /* Views */
-import { TestView } from "../views";
+// import { TestView } from "../views";
 /* Subcomponents */
 import { Nav, Timetable } from "../components";
 

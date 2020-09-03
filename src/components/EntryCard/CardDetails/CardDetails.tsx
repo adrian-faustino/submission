@@ -17,7 +17,9 @@ const CardDetails = () => {
 
   const renderOptionsJSX = () => {
     return PROJECTS.map((project, i) => (
-      <option value={project.title}>{project.title}</option>
+      <option key={`${project}-${i}-option`} value={project.title}>
+        {project.title}
+      </option>
     ));
   };
 
