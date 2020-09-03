@@ -26,7 +26,7 @@ const Timer = () => {
       <TimerControls timer={timer} setTimer={setTimer} />
 
       {/* display timer details */}
-      <span>Total: {timer.totalTime}</span>
+      <span>Total: {timer.totalTime.toFixed(2)}</span>
       <span>Start: {timer.startTime && formatDateObj(timer.startTime)}</span>
       <span>End: {timer.endTime && formatDateObj(timer.endTime)}</span>
     </div>

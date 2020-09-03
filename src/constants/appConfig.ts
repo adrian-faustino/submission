@@ -49,4 +49,4 @@ export const PROJECTS: Array<IProject> = [
 ];
 
 // TIMER configs
-export const TIMER_TICK_RATE: number = 300; // 300ms
+export const TIMER_TICK_RATE: number = 122; // 300ms
