@@ -1,0 +1,14 @@
+.Headers__ {
+  /* inherit parent width */
+  width: 100%;
+  padding: 10px 0;
+  background: red;
+
+  /* space children */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.Headers__item {
+}
