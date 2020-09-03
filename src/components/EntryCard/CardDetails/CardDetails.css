@@ -22,12 +22,20 @@
   font-size: var(--font-size-l);
   font-weight: bold;
   width: 100%;
+  cursor: pointer;
+  padding: 0 3px;
+}
+.CardDetails__title:hover {
+  z-index: 50;
+  background: var(--theme-font-white);
+  box-shadow: 0 0 6px black;
 }
 
 .CardDetails__description {
   font-size: var(--font-size-s);
   font-weight: 400;
   color: rgb(57, 57, 57);
+  padding: 0 3px;
   margin: 0 0 12px 0;
 }
 

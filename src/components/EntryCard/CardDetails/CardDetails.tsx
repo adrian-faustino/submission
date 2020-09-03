@@ -60,6 +60,7 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
       {/* only show form in edit mode */}
       {isEditMode && (
         <form className="CardDetails__form">
+          {/* Title Input */}
           <input
             onChange={handleChange}
             value={details.title}
@@ -68,6 +69,7 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
             placeholder="Enter task title"
             autoComplete="off"
           />
+          {/* Description Input */}
           <textarea
             onChange={handleChange}
             value={details.description}
@@ -75,6 +77,7 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
             placeholder="Enter task description"
             autoComplete="off"
           ></textarea>
+          {/* Project Dropdown Input */}
           <select
             className="CardDetails__select"
             onChange={handleChange}
@@ -89,12 +92,15 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
       {/* only show when not in edit mode */}
       {!isEditMode && (
         <div className="CardDetails__info-container">
+          {/* Title */}
           <span className="CardDetails__title">
             {details.title || "Untitled"}
           </span>
+          {/* Description */}
           <span className="CardDetails__description">
             {details.description || "No description provided."}
           </span>
+          {/* Project Tag */}
           <span
             style={{ background: getProjectBGColor(details.project) }}
             className="CardDetails__project border-rad"
@@ -104,6 +110,7 @@ const CardDetails: React.FC<ICardDetailsProps> = ({ setTimerReady }) => {
         </div>
       )}
 
+      {/* button that toggled between "save" or "edit" depending on state */}
       <button
         className={`CardDetails__settings-btn ${buttonInnerText}`}
         onClick={handleToggleEditMode}
