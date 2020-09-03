@@ -60,7 +60,7 @@ const Column: React.FC<IColumnProps> = ({ day }) => {
       </button>
 
       {/* footer of each column to show total time this day */}
-      <span className="Column__total-time-span">
+      <span className="Column__total-time-span center-text">
         Total time:{columnTotalTime.toFixed(2)}
       </span>
     </div>

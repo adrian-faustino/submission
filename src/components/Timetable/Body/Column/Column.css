@@ -1,6 +1,7 @@
 .Column__ {
   /* ensure on load bg is covering view */
   min-height: calc(100vh - var(--nav-height));
+  border-left: 1px solid var(--theme-color2);
 
   position: relative;
 }
@@ -12,15 +13,15 @@
 }
 
 .Column__new-entry-btn {
-  margin-bottom: var(--bottom-nav-height);
+  margin-bottom: calc(var(--bottom-nav-height) * 2);
 }
 
 .Column__total-time-span {
   display: flex;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   bottom: 0;
   height: var(--bottom-nav-height);
   background: white;
+  padding: 0 15px;
+  border-radius: 0 7px 0 0;
 }
