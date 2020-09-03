@@ -11,6 +11,7 @@ const Nav = () => {
     (state: RootStateOrAny) => state.totalWorktime.allEntries
   );
 
+  // total work time of all the entries on all days
   const total = allEntries.reduce(
     (acc: number, entry: any) => acc + entry.entryTotalTime,
     0
@@ -18,8 +19,8 @@ const Nav = () => {
 
   return (
     <section className="Nav__ center-text">
-      <h1>Time Tracker</h1>
-      <span>
+      <h1 className="Nav__site-logo">Time Tracker</h1>
+      <span className="Nav__weekly--total-span">
         <b>Weekly hours:</b> {formatMStoHourFloat(total)}
       </span>
     </section>

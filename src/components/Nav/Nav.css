@@ -10,3 +10,29 @@
   top: 0;
   z-index: 30;
 }
+
+.Nav__site-logo {
+  color: var(--theme-font-white);
+}
+
+.Nav__weekly--total-span {
+  color: var(--theme-color3);
+}
+
+@media only screen and (max-width: 400px) {
+  .Nav__ {
+    align-items: center;
+    /* move each grouping away rom each other */
+    margin: 0 -25px;
+  }
+
+  .Nav__site-logo {
+    margin: 0;
+    font-size: var(--font-size-m);
+    font-weight: bold;
+  }
+
+  .Nav__weekly--total-span {
+    font-size: var(--font-size-s);
+  }
+}
