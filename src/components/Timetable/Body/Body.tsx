@@ -8,7 +8,9 @@ import { Column } from "../../../components";
 
 const Body = () => {
   const renderBodyJSX = () => {
-    return DAYS_OF_WEEK.map((day, i) => <Column key={`${day}-${i}-column`} />);
+    return DAYS_OF_WEEK.map((day, i) => (
+      <Column day={day} key={`${day}-${i}-column`} />
+    ));
   };
 
   return <section>{renderBodyJSX()}</section>;

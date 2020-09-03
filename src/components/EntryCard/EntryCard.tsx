@@ -1,9 +1,17 @@
 import React from "react";
+/* Constants */
+import { IDay, IHour } from "../../constants/types";
 
-const EntryCard = () => {
+interface IEntryCardProps {
+  day: IDay;
+  hour: IHour;
+}
+
+const EntryCard: React.FC<IEntryCardProps> = ({ day, hour }) => {
   return (
     <div>
-      <div>I am one EntryCard</div>
+      <span>{hour}</span>
+      <span>{day.short}</span>
     </div>
   );
 };
