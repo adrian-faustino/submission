@@ -4,7 +4,7 @@ import "./Nav.css";
 /* Redux */
 import { useSelector, RootStateOrAny } from "react-redux";
 /* Util */
-import { formatMStoHHMMSS } from "../../util/timeFormatHelpers";
+import { formatMStoHourFloat } from "../../util/timeFormatHelpers";
 
 const Nav = () => {
   const allEntries = useSelector(
@@ -18,8 +18,10 @@ const Nav = () => {
 
   return (
     <section className="Nav__ center-text">
-      <h3>Logo</h3>
-      <span>Total minutes this week: {formatMStoHHMMSS(total)}</span>
+      <h1>Time Tracker</h1>
+      <span>
+        <b>Weekly hours:</b> {formatMStoHourFloat(total)}
+      </span>
     </section>
   );
 };

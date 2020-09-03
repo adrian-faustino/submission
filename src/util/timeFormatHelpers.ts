@@ -55,3 +55,9 @@ export const formatMStoHHMMSS = (s: number) => {
 
   return resultStr;
 };
+
+// e.g. 0.5h
+export const formatMStoHourFloat = (s: number) => {
+  const hours = s / 60 / 60;
+  return `${hours.toFixed(2)}h`;
+};
