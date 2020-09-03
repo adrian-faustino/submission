@@ -1,17 +1,17 @@
 export const formatMonth = (index: number) => {
   return [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    "Jan.",
+    "Feb.",
+    "Mar.",
+    "Apr.",
+    "May.",
+    "Jun.",
+    "Jul.",
+    "Aug.",
+    "Sep.",
+    "Oct.",
+    "Nov.",
+    "Dec.",
   ][index];
 };
 
@@ -51,13 +51,13 @@ export const formatMStoHHMMSS = (s: number) => {
 
   let resultStr = ``;
   // if hours are present, then conditionally concat to result
-  h > 0 && (resultStr = resultStr + `${formatLeadingZeros(h, 2)}:`);
+  h > 0 && (resultStr = resultStr + `${formatLeadingZeros(h, 2)}h`);
 
   // always show min, even if at 0
-  resultStr = resultStr + `${formatLeadingZeros(m, 2)}`;
+  resultStr = resultStr + `${formatLeadingZeros(m, 2)}m`;
 
   // always show second, even if at 0
-  resultStr = resultStr + `:${formatLeadingZeros(_s, 2)}`;
+  resultStr = resultStr + `${formatLeadingZeros(_s, 2)}s`;
 
   return resultStr;
 };
