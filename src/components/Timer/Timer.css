@@ -27,3 +27,24 @@
   font-style: italic;
   margin: 0 auto;
 }
+
+.Timer__time-span {
+  transition: all 0.4s;
+}
+
+.Timer__time-span.running {
+  animation: pulse 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  font-weight: 700;
+  color: var(--theme-color-ok2);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(0.97);
+  }
+}

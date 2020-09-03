@@ -30,12 +30,17 @@ const Timer: React.FC<ITimerProps> = ({ handleNewTotal }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timer.totalTime]);
 
+  // if timer is running, highlight the time ticking
+  const timerSpanClass = timer.isRunning && "running";
+
   return (
     <div className="Timer__">
       {/* display timer details */}
       <div className="Timer__info-container">
         <label>Total:</label>
-        <span>{formatMStoHHMMSS(timer.totalTime)}</span>
+        <span className={`Timer__time-span ${timerSpanClass}`}>
+          {formatMStoHHMMSS(timer.totalTime)}
+        </span>
         <label>Start:</label>
         <span>{timer.startTime && formatDateObj(timer.startTime)}</span>
         <label>End:</label>
