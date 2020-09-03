@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
-interface ITimerState {
-  isRunning: boolean;
-  totalTime: number;
-  startTime: number;
-}
+/* Styles */
+import "./Timer.css";
+/* Subcomponents */
+import { TimerControls } from "../";
+/* Constants */
+import { ITimerState } from "../../constants/types";
 
 const initialState: ITimerState = {
   isRunning: false,
@@ -19,6 +19,8 @@ const Timer = () => {
   return (
     <div className="Timer__">
       <h3>Timer</h3>
+
+      <TimerControls timer={timer} setTimer={setTimer} />
 
       {/* display timer details */}
       <span>Total: {timer.totalTime}</span>

@@ -10,3 +10,10 @@ export interface IProject {
   title: string;
   color_code: string;
 }
+
+// for Timer.tsx
+export interface ITimerState {
+  isRunning: boolean;
+  totalTime: number;
+  startTime: number;
+}
