@@ -3,12 +3,12 @@ import React from "react";
 import "./Body.css";
 /* Constants */
 import { DAYS_OF_WEEK } from "../../../constants/appConfig";
+/* Subcomponents */
+import { Column } from "../../../components";
 
 const Body = () => {
   const renderBodyJSX = () => {
-    return DAYS_OF_WEEK.map((day, i) => (
-      <div key={`${day}-${i}-column`}>{day.long}</div>
-    ));
+    return DAYS_OF_WEEK.map((day, i) => <Column key={`${day}-${i}-column`} />);
   };
 
   return <section>{renderBodyJSX()}</section>;

@@ -11,3 +11,5 @@ export const DAYS_OF_WEEK: Array<Day> = [
   { long: "Saturday", short: "Sat", index: 0 },
   { long: "Sunday", short: "Sun", index: 0 },
 ];
+
+// time of day
