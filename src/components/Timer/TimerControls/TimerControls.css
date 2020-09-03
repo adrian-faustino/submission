@@ -3,15 +3,17 @@
 }
 
 .TimerControls__btn.pause {
-  background: var(--theme-color-warning);
+  background: var(--theme-color-warning2);
 }
 .TimerControls__btn.pause:hover {
-  background: var(--theme-color-warning2);
+  background: white;
 }
 
 .TimerControls__btn.start {
   background: var(--theme-color-ok);
+  color: white;
 }
 .TimerControls__btn.start:hover {
-  background: var(--theme-color-ok2);
+  background: white;
+  color: var(--theme-color3);
 }

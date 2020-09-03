@@ -44,19 +44,21 @@
 }
 
 .CardDetails__settings-btn.edit {
-  background: var(--theme-color-info);
+  background: var(--theme-color-info2);
+  color: white;
 }
 .CardDetails__settings-btn.edit:hover {
-  background: var(--theme-color-info2);
+  background: var(--theme-color-info);
 }
 
 .CardDetails__settings-btn.save {
-  background: var(--theme-color5);
+  background: var(--theme-color-info2);
   color: white;
   padding: 4px 10px;
 }
 .CardDetails__settings-btn.save:hover {
-  background: var(--theme-color3);
+  background: var(--theme-color-info);
+  color: white;
 }
 
 /* make sure all stretch to fit card width */
