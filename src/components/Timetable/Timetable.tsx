@@ -2,13 +2,11 @@ import React from "react";
 /* Styles */
 import "./Timetable.css";
 /* Subcomponents */
-import { Headers, Body } from "../";
+import { Headers, Body, Footers } from "../";
 
 const Timetable = () => {
   return (
     <section>
-      <h3>timetble</h3>
-
       {/* headers */}
       <Headers />
 
@@ -16,6 +14,7 @@ const Timetable = () => {
       <Body />
 
       {/* footers */}
+      <Footers />
     </section>
   );
 };
