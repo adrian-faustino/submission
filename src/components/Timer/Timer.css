@@ -1,4 +1,26 @@
 .Timer__ {
   background: var(--theme-color1);
   margin-top: 5px;
+  padding: 5px 10px;
+}
+
+.Timer__info-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.Timer__info-container > label,
+.Timer__info-container > span {
+  /* normalize */
+  margin: 0;
+}
+
+.Timer__info-container > label {
+  font-weight: bold;
+}
+
+.Timer__info-container > span {
+  font-style: italic;
+  margin: 0 auto;
 }

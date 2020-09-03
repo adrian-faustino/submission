@@ -31,9 +31,14 @@ const Timer: React.FC<ITimerProps> = ({ handleNewTotal }) => {
   return (
     <div className="Timer__">
       {/* display timer details */}
-      <span>Total: {timer.totalTime.toFixed(2)}</span>
-      <span>Start: {timer.startTime && formatDateObj(timer.startTime)}</span>
-      <span>End: {timer.endTime && formatDateObj(timer.endTime)}</span>
+      <div className="Timer__info-container">
+        <label>Total:</label>
+        <span>{timer.totalTime.toFixed(2)}</span>
+        <label>Start:</label>
+        <span>{timer.startTime && formatDateObj(timer.startTime)}</span>
+        <label>End:</label>
+        <span>{timer.endTime && formatDateObj(timer.endTime)}</span>
+      </div>
 
       <TimerControls timer={timer} setTimer={setTimer} />
     </div>
